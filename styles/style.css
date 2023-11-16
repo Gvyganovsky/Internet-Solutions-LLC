@@ -251,6 +251,37 @@
 
 
 
+.slider_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    position: relative;
+    width: 900px;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300px; 
+  }
+  
+  .slide {
+    flex: 0 0 300px; /* Ширина одного слайда */
+  }
+  
+  
+
+
+
+
+
+
+
+
 
 
 
