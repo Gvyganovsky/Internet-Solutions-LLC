@@ -1,49 +1,53 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const prevBtn = document.querySelector('.prevBtn');
-    const nextBtn = document.querySelector('.nextBtn');
-    const slidesContainer = document.querySelector('.slides');
-    const slides = document.querySelectorAll('.slide');
-    const slideWidth = slides[0].clientWidth;
-    const slideCount = slides.length;
-    let currentIndex = 1; // Начинаем с первого "реального" слайда
-  
-    // Клонирование первого и последнего слайдов для плавного цикла
-    slidesContainer.appendChild(slides[0].cloneNode(true));
-    slidesContainer.insertBefore(slides[slideCount - 1].cloneNode(true), slides[0]);
-  
-    // Установка начального сдвига для показа "второго" слайда
-    slidesContainer.style.transform = `translateX(-${slideWidth}px)`;
-  
-    function showSlide(index) {
-      slidesContainer.style.transition = 'transform 0.5s ease';
-      slidesContainer.style.transform = `translateX(-${index * slideWidth}px)`;
-    }
-  
-    function slideNext() {
-      currentIndex++;
-  
-      if (currentIndex >= slideCount) {
-        currentIndex = 1;
-        slidesContainer.style.transition = 'none';
-        slidesContainer.style.transform = `translateX(-${slideWidth}px)`;
-      }
-  
-      showSlide(currentIndex);
-    }
-  
-    function slidePrev() {
-      currentIndex--;
-  
-      if (currentIndex <= 0) {
-        currentIndex = slideCount - 1;
-        slidesContainer.style.transition = 'none';
-        slidesContainer.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
-      }
-  
-      showSlide(currentIndex);
-    }
-  
-    nextBtn.addEventListener('click', slideNext);
-    prevBtn.addEventListener('click', slidePrev);
-  });
-  
+const prevBtn = document.querySelector('.prevBtn');
+const nextBtn = document.querySelector('.nextBtn');
+const slides = document.querySelector('.slides');
+const slideItems = document.querySelectorAll('.slide');
+const sliderWidth = document.querySelector('.slider').offsetWidth;
+
+let slideIndex = 0;
+
+function updateSlider() {
+  slides.style.transition = 'transform 0.5s ease-in-out';
+  slides.style.transform = `translateX(${-slideIndex * sliderWidth}px)`;
+}
+
+nextBtn.addEventListener('click', () => {
+  if (slideIndex < slideItems.length - 1) {
+    slideIndex++;
+  } else {
+    slideIndex = 0;
+  }
+  updateSlider();
+});
+
+prevBtn.addEventListener('click', () => {
+  if (slideIndex > 0) {
+    slideIndex--;
+  } else {
+    slideIndex = slideItems.length - 1;
+  }
+  updateSlider();
+});
+
+slides.addEventListener('transitionend', () => {
+  if (slideItems[slideIndex].classList.contains('firstClone')) {
+    slides.style.transition = 'none';
+    slideIndex = 0;
+    slides.style.transform = `translateX(${-slideIndex * sliderWidth}px)`;
+  }
+  if (slideItems[slideIndex].classList.contains('lastClone')) {
+    slides.style.transition = 'none';
+    slideIndex = slideItems.length - 3;
+    slides.style.transform = `translateX(${-slideIndex * sliderWidth}px)`;
+  }
+});
+
+// Клонирование первых и последних слайдов для бесконечного слайдера
+const firstClone = slideItems[0].cloneNode(true);
+firstClone.classList.add('firstClone');
+const lastClone = slideItems[slideItems.length - 1].cloneNode(true);
+lastClone.classList.add('lastClone');
+slides.appendChild(firstClone);
+slides.insertBefore(lastClone, slideItems[0]);
+slideIndex = 1;
+updateSlider();

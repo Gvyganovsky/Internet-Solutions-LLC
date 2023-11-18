@@ -16,6 +16,9 @@
             <div class="header_content">
                 <img src="./assets/logo.png" alt="logo">
                 <nav class="menu">
+                    <div class="hamburger-menu">
+                        <img src="./assets/burger.png" alt="menu" class="hamburger">
+                    </div>
                     <ul class="menu_link">
                         <li><a href="#" class="header_text">FEATURES</a></li>
                         <li><a href="#" class="header_text">SCREENSHOT</a></li>
@@ -58,7 +61,7 @@
                 </div>
             </div>
         </section>
-        <section class="features">
+        <section class="section_white">
             <div class="section_content">
                 <div class="features_info">
                     <div class="features_icon-block">
@@ -150,22 +153,23 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="section_white">
             <div class="section_content">
+                <h2 class="slider_title">App Screenshots</h2>
                 <div class="slider_content">
                     <button class="prevBtn">
                         <img class="" src="./assets/leftButton.png" alt="leftButton">
                     </button>
                     <div class="slider">
                         <div class="slides">
-                            <div class="slide active">
-                                <img src="./assets/phone.png" alt="Slide 1">
+                            <div class="slide">
+                                <img src="./assets/phone.png" alt="Slide 1" class="slider_img">
                             </div>
                             <div class="slide">
-                                <img src="./assets/phone.png" alt="Slide 2">
+                                <img src="./assets/phone.png" alt="Slide 2" class="slider_img">
                             </div>
                             <div class="slide">
-                                <img src="./assets/phone.png" alt="Slide 3">
+                                <img src="./assets/phone.png" alt="Slide 3" class="slider_img">
                             </div>
                         </div>
                     </div>
@@ -175,18 +179,99 @@
                 </div>
             </div>
         </section>
-
-
-
-
-
-
-
-
-
+        <section class="section">
+            <div class="section_content">
+                <h2 class="video_title">App Video Showcase</h2>
+                <img src="./assets/video.png" alt="video" class="video_img">
+            </div>
+        </section>
+        <section class="section_white">
+            <div class="section_content">
+                <h2 class="downUpdate">Download & Updates</h2>
+                <div class="downUpdate_info">
+                    <div class="downUpdate_button-block">
+                        <button class="downUpdate_button">
+                            <img src="./assets/android.png" alt="android" class="downUpdate_icon">
+                            <span class="downUpdate_text-title">2118</span>
+                            <span class="downUpdate_text">Downloads</span>
+                        </button>
+                        <button class="downUpdate_button">
+                            <img src="./assets/apple.png" alt="apple" class="downUpdate_icon">
+                            <span class="downUpdate_text-title">2118</span>
+                            <span class="downUpdate_text">Downloads</span>
+                        </button>
+                        <button class="downUpdate_button">
+                            <img src="./assets/windows.png" alt="windows" class="downUpdate_icon">
+                            <span class="downUpdate_text-title">2118</span>
+                            <span class="downUpdate_text">Downloads</span>
+                        </button>
+                    </div>
+                    <div class="downUpdate_input-block">
+                        <p class="downUpdate_input-text">We promise, your mail never will be spam.</p>
+                        <div class="downUpdate_inputButton-block">
+                            <input type="email" placeholder="Enter Email Address" class="downUpdate_input">
+                            <button class="downUpdate_button-submit">SUBMIT</button>
+                        </div>
+                    </div>
+                </div>
+                <img src="./assets/phone_horiz.png" alt="phone_horiz" class="downUpdate_img">
+            </div>
+        </section>
+        <section class="section">
+            <div class="section_content">
+                <h2 class="auth_title">App Support</h2>
+                <div class="auth_content">
+                    <form action="" class="form_content">
+                        <input type="text" placeholder="Full Name" class="auth_input">
+                        <input type="email" placeholder="Email" class="auth_input">
+                        <input type="tel" placeholder="Phone" class="auth_input">
+                        <input type="text" placeholder="Message" class="auth_input">
+                        <button class="auth_button">SUBMIT</button>
+                    </form>
+                    <div class="support_content">
+                        <div class="support_block">
+                            <img src="./assets/phone_icon.png" alt="phone_icon" class="support_icon">
+                            <p class="support_text">+444 1234 567890</p>
+                        </div>
+                        <div class="support_block">
+                            <img src="./assets/email_icon.png" alt="phone_icon" class="support_icon">
+                            <p class="support_text">info@appbies.com</p>
+                            <p class="support_text-second">support@appbies.com</p>
+                        </div>
+                        <div class="support_block">
+                            <img src="./assets/geo_icon.png" alt="phone_icon" class="support_icon">
+                            <p class="support_text">293 S Alameda st</p>
+                            <p class="support_text-second">Main Road,, London</p>
+                        </div>
+                    </div>
+                    <div class="chat_content">
+                        <h3 class="chat_title">Online Chat</h3>
+                        <img src="./assets/avatar.png" alt="avatar" class="chat_img">
+                        <p class="chat_text">John Thoms Online</p>
+                        <div class="green_block">
+                            Online
+                        </div>
+                        <button class="chat_button">Start Chat</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer class="section_white">
+        <div class="section_content">
+            <img src="./assets/footer_logo.png" alt="footer_logo" class="footer_logo">
+            <div class="footer_icons-block">
+                <img src="./assets/facebook.png" alt="facebook" class="icon_footer">
+                <img src="./assets/twitter.png" alt="twitter" class="icon_footer">
+                <img src="./assets/in.png" alt="in" class="icon_footer">
+                <img src="./assets/youtube.png" alt="youtube" class="icon_footer">
+                <img src="./assets/skype.png" alt="skype" class="icon_footer">
+            </div>
+            <p class="footer_text">Copyrights © | All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 <script src="./scripts/slider.js"></script>
+<script src="./scripts/burger_menu.js"></script>
 
 </html>
