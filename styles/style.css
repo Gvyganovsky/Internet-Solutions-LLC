@@ -285,15 +285,33 @@ body {
 }
 
 .slider_content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 100px 900px 100px;
     justify-content: center;
     align-items: center;
     margin-top: 74px;
 }
 
+.clider_button {
+    display: flex;
+    justify-content: center;
+}
+
+.prevBtn, .nextBtn {
+    border: 1px solid #0983d1;
+    padding: 5px;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    cursor: pointer;
+}
+
 .slider {
     position: relative;
-    width: 900px;
     overflow: hidden;
 }
 
@@ -587,12 +605,16 @@ body {
         display: block;
     }
 
-    .slider {
-        width: 600px;
+    .slider_content {
+        grid-template-columns: 100px 600px 100px;
     }
 }
 
 @media screen and (max-width: 862px) {
+    .slider_content {
+        grid-template-columns: 70px 300px 70px;
+    }
+
     .hamburger-menu {
         display: grid;
         justify-content: right;
@@ -625,8 +647,6 @@ body {
 
     .menu_link {
         display: none;
-        /* Скрыть обычное меню */
-        /* Добавьте стили для бургер-меню (иконки, расположение и т.д.) */
     }
 
     .about_content {
@@ -675,13 +695,12 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    
-    .slide {
-        flex: 0 0 300px;
+    .slider_content {
+        grid-template-columns: 300px;
     }
 
-    .prevBtn, .nextBtn {
-        display: none;
+    .slide {
+        flex: 0 0 300px;
     }
 
     .about_title {
@@ -696,7 +715,7 @@ body {
     .about_img {
         height: 600px;
     }
-  
+
     .features_img-phones {
         width: 280px;
         height: 280px;

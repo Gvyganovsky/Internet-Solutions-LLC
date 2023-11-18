@@ -8,7 +8,7 @@ let slideIndex = 0;
 
 function updateSlider() {
   slides.style.transition = 'transform 0.5s ease-in-out';
-  slides.style.transform = `translateX(${-slideIndex * sliderWidth}px)`;
+  slides.style.transform = `translateX(${-slideIndex * sliderWidth/3}px)`;
 }
 
 nextBtn.addEventListener('click', () => {
