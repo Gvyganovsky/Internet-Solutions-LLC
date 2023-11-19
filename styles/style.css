@@ -602,6 +602,10 @@ body {
     .downUpdate_input-block {
         margin-top: 24px;
     }
+    
+    .slider_content {
+        grid-template-columns: 80px 600px 80px;
+    }
 }
 
 @media screen and (max-width: 1050px) {
@@ -621,6 +625,10 @@ body {
 
     .slider_content {
         grid-template-columns: 100px 600px 100px;
+    }
+
+    .auth_button {
+        margin: 18px auto;
     }
 }
 
