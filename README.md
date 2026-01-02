@@ -1,4 +1,4 @@
-# vpoxod – Туры на Кавказ 🏔️✨
+# internet-solutions
 
 ![Баннер Кавказа](./assets/about_phone.png)
 
